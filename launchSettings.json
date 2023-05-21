@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "lojan-1application.api": "StartDebugging",
+        "lojan-1application.web": "StartDebugging"
+      }
+    }
+  }
+}
