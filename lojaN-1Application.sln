@@ -5,9 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lojaN-1Application.API", "lojaN-1Application.API\lojaN-1Application.API.csproj", "{3DB9D7AC-7B95-44F3-821A-360C01866E80}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5276B10D-E940-462C-8645-558080188221}"
-EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "lojaN-1Application.Web", "lojaN-1Application.Web\lojaN-1Application.Web.esproj", "{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{081CBE6C-E2B9-40E0-8320-3DA4A0A1482D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +17,10 @@ Global
 		{3DB9D7AC-7B95-44F3-821A-360C01866E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DB9D7AC-7B95-44F3-821A-360C01866E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DB9D7AC-7B95-44F3-821A-360C01866E80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5276B10D-E940-462C-8645-558080188221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5276B10D-E940-462C-8645-558080188221}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5276B10D-E940-462C-8645-558080188221}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5276B10D-E940-462C-8645-558080188221}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16DC6DA9-D10F-4C3F-8A57-41BF585E3FE8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{081CBE6C-E2B9-40E0-8320-3DA4A0A1482D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081CBE6C-E2B9-40E0-8320-3DA4A0A1482D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081CBE6C-E2B9-40E0-8320-3DA4A0A1482D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081CBE6C-E2B9-40E0-8320-3DA4A0A1482D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
