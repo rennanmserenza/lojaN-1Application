@@ -56,7 +56,7 @@ namespace lojaN_1Application.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> AtualizaProduto(int id, Produto produto)
         {
-            Produto cadProduto = _context.Produtos.FirstOrDefault(p => p.CodProduto == id);
+            Produto cadProduto = await _context.Produtos.FirstOrDefaultAsync(p => p.CodProduto == id);
             if(cadProduto == null)
                 return NotFound();
 

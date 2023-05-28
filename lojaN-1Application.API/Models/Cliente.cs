@@ -1,14 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using lojaN_1Application.API.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models
 {
-    [Table("clientes")]
+    [Table("cliente")]
     public class Cliente
     {
-        [Column("id")]
-        public int Id { get; set; }
+        [Key]
+        [Required]
+        [Column("cod_cliente")]
+        public int CodCliente { get; set; }
 
-        [Column("nome")]
+        [Column("nome_cliente")]
+        [Required]
         public string Nome { get; set; }
 
         [Column("endereco")]
@@ -19,6 +24,10 @@ namespace Models
 
         [Column("senha")]
         public string Senha { get; set; }
+
+        public int CodPessoa { get; set; }
+
+        public virtual Pessoa Pessoa { get; set; }
 
 
 

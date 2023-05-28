@@ -47,14 +47,14 @@ namespace Controllers
             _clientesContext.Clientes.Add(cliente);
             await _clientesContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetCliente), new { id = cliente.Id }, cliente);
+            return CreatedAtAction(nameof(GetCliente), new { id = cliente.CodCliente }, cliente);
         }
 
         // PUT: api/clientes/5
         [HttpPut("{id}", Name = "PutCliente")]
         public async Task<IActionResult> PutCliente(int id, Cliente cliente)
         {
-            if (id != cliente.Id)
+            if (id != cliente.CodCliente)
             {
                 return BadRequest();
             }
