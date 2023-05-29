@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace lojaN_1Application.API.Models
@@ -20,5 +21,7 @@ namespace lojaN_1Application.API.Models
         public int CodGrupo { get; set; }
 
         public virtual GrupoPermissao GrupoPermissao { get; set; }
+        public virtual Funcionario Funcionario { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

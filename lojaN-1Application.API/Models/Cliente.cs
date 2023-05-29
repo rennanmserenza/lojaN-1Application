@@ -25,11 +25,11 @@ namespace Models
         [Column("senha")]
         public string Senha { get; set; }
 
+        [Column("cod_pessoa")]
         public int CodPessoa { get; set; }
 
         public virtual Pessoa Pessoa { get; set; }
-
-
-
+        public virtual Pedido Pedido { get; set; }
+        
     }
 }

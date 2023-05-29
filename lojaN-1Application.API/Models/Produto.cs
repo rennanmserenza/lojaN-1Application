@@ -27,5 +27,7 @@ namespace lojaN_1Application.API.Models
 
         [Column("preco")]
         public double Preco { get; set; }
+
+        public virtual ItemPedido ItemPedido { get; set; }
     }
 }

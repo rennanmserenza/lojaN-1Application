@@ -14,5 +14,7 @@ namespace lojaN_1Application.API.Models
         [Required]
         [Column("desc_permissao")]
         public string DescPermissao { get; set; }
+
+        public virtual Pessoa Pessoa { get; set; }
     }
 }

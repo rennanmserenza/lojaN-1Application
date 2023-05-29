@@ -14,5 +14,6 @@ namespace lojaN_1Application.API.Models
         [Required]
         [Column("desc_status")]
         public string DescStatus { get; set; }
+        public virtual Pedido Pedido { get; set; }
     }
 }

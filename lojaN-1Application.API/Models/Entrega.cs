@@ -29,6 +29,6 @@ namespace lojaN_1Application.API.Models
         public DateTime DataStatus { get; set; }
 
         public virtual Pedido Pedido { get; set; }
-        public virtual StatusPedido StatusPedido { get; set; }
+        public virtual StatusEntrega StatusEntrega { get; set; }
     }
 }

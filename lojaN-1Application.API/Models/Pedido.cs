@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace lojaN_1Application.API.Models
@@ -30,8 +31,13 @@ namespace lojaN_1Application.API.Models
         [Column("cod_status")]
         public int CodStatus { get; set; }
         [Column("cod_cliente")]
-        public string CodCliente { get; set; }
+        public int CodCliente { get; set; }
 
         public virtual StatusPedido StatusPedido { get; set; }
+        public virtual Entrega Entrega { get; set; }
+        public virtual ItemPedido ItemPedido { get; set; }
+
+        public virtual Cliente Cliente { get; set; }
+
     }
 }

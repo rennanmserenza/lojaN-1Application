@@ -8,13 +8,16 @@ namespace lojaN_1Application.API.Models
     {
         [Key]
         [Required]
+        [Column("cod_pedido")]
         public int CodPedido { get; set; }
 
         [Key]
         [Required]
+        [Column("cod_produto")]
         public int CodProduto { get; set; }
 
         [Required]
+        [Column("qtd_produto")]
         public int QtdProduto { get; set; }
 
         public virtual Produto Produto { get; set; }
