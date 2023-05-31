@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace lojaN_1Application.API.Migrations
 {
     [DbContext(typeof(ClienteContext))]
-    [Migration("20230528235935_Criacao banco, tabelas e vinculos")]
-    partial class Criacaobancotabelasevinculos
+    [Migration("20230531021608_alteração no banco")]
+    partial class alteraçãonobanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,6 +57,11 @@ namespace lojaN_1Application.API.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("senha");
+
+                    b.Property<string>("SenhaHash")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("senha_hash");
 
                     b.HasKey("CodCliente");
 

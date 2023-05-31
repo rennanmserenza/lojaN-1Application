@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace lojaN_1Application.API.Migrations
 {
     /// <inheritdoc />
-    public partial class Criacaobancotabelasevinculos : Migration
+    public partial class alteraçãonobanco : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -98,6 +98,7 @@ namespace lojaN_1Application.API.Migrations
                     endereco = table.Column<string>(type: "text", nullable: false),
                     email = table.Column<string>(type: "text", nullable: false),
                     senha = table.Column<string>(type: "text", nullable: false),
+                    senha_hash = table.Column<string>(type: "text", nullable: false),
                     cod_pessoa = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

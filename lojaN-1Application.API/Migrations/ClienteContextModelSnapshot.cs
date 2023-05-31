@@ -55,6 +55,11 @@ namespace lojaN_1Application.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("senha");
 
+                    b.Property<string>("SenhaHash")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("senha_hash");
+
                     b.HasKey("CodCliente");
 
                     b.HasIndex("CodPessoa")

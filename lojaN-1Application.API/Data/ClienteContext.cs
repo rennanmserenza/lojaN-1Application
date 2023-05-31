@@ -33,6 +33,9 @@ namespace Data
                 .HasForeignKey<Cliente>(pessoa => pessoa.CodPessoa)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Cliente>()
+                .Ignore(c => c.ConfirmaSenha);
+
             //Tabela Pessoa
             modelBuilder.Entity<GrupoPermissao>()
                 .HasOne(perm => perm.Pessoa)

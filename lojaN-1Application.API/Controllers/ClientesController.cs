@@ -2,6 +2,7 @@ using Data;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Microsoft.EntityFrameworkCore;
+using lojaN_1Application.API.Interfaces;
 
 namespace Controllers
 {
@@ -11,6 +12,7 @@ namespace Controllers
     {
         private readonly ClienteContext _clientesContext;
         private readonly ILogger<ClientesController> _logger;
+        private readonly ISecurityService _securityService;
 
         public ClientesController(ClienteContext clientesContext, ILogger<ClientesController> logger)
         {
@@ -44,10 +46,30 @@ namespace Controllers
         [HttpPost(Name = "PostCliente")]
         public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
-            _clientesContext.Clientes.Add(cliente);
+
+            var isEquals = _securityService.ComparaSenha(cliente.Senha, cliente.ConfirmaSenha);
+
+            if(!isEquals)
+            {
+                return BadRequest("As senhas não conferem");
+            }
+
+            cliente.Senha = _securityService.EncriptaSenha(cliente.Senha);
+            cliente.SenhaHash = _securityService.EncriptaSenha(cliente.Senha);
+
+            var novoCliente = new Cliente
+            {
+                Nome = cliente.Nome,
+                Endereco = cliente.Endereco,
+                Email = cliente.Email,
+                Senha = cliente.Senha,
+                SenhaHash = cliente.SenhaHash,
+            };
+
+            _clientesContext.Clientes.Add(novoCliente);
             await _clientesContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetCliente), new { id = cliente.CodCliente }, cliente);
+            return CreatedAtAction(nameof(GetCliente), new { id = novoCliente.CodCliente }, novoCliente);
         }
 
         // PUT: api/clientes/5

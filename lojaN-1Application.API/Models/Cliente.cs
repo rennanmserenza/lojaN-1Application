@@ -25,6 +25,12 @@ namespace Models
         [Column("senha")]
         public string Senha { get; set; }
 
+        [NotMapped]
+        public string ConfirmaSenha { get; set; }
+
+        [Column("senha_hash")]
+        public string SenhaHash { get; set; }
+
         [Column("cod_pessoa")]
         public int CodPessoa { get; set; }
 
