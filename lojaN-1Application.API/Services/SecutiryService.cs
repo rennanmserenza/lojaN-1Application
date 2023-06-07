@@ -1,6 +1,5 @@
-﻿using BCrypt.Net;
+﻿using Models;
 using lojaN_1Application.API.Interfaces;
-using Models;
 
 namespace lojaN_1Application.API.Services
 {
@@ -8,20 +7,17 @@ namespace lojaN_1Application.API.Services
     {
         public bool ComparaSenha(string senha, string confirmaSenha)
         {
-            var isEquals = senha.Trim().Equals(confirmaSenha.Trim());
-            return isEquals;
+            return senha.Trim().Equals(confirmaSenha.Trim());
         }
 
         public string EncriptaSenha(string senha)
         {
-            var senhaEncriptada = BCrypt.Net.BCrypt.HashPassword(senha);
-            return senhaEncriptada;
+            return BCrypt.Net.BCrypt.HashPassword(senha);
         }
 
         public bool VerificaSenha(string senha, Cliente cliente)
         {
-            bool validaSenha = BCrypt.Net.BCrypt.Verify(senha, cliente.SenhaHash);
-            return validaSenha;
+            return BCrypt.Net.BCrypt.Verify(senha, cliente.SenhaHash);
         }
     }
 }

@@ -11,13 +11,12 @@ namespace Controllers
     public class ClientesController : ControllerBase
     {
         private readonly ClienteContext _clientesContext;
-        private readonly ILogger<ClientesController> _logger;
         private readonly ISecurityService _securityService;
 
-        public ClientesController(ClienteContext clientesContext, ILogger<ClientesController> logger)
+        public ClientesController(ClienteContext clientesContext, ISecurityService securityService)
         {
             _clientesContext = clientesContext;
-            _logger = logger;
+            _securityService = securityService;
         }
 
         #region CRUD
@@ -46,7 +45,6 @@ namespace Controllers
         [HttpPost(Name = "PostCliente")]
         public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
-
             var isEquals = _securityService.ComparaSenha(cliente.Senha, cliente.ConfirmaSenha);
 
             if(!isEquals)
